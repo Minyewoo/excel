@@ -610,7 +610,7 @@ class Parser {
       case 's':
         final sharedString = _excel._sharedStrings
             .value(int.parse(_parseValue(node.findElements('v').first)));
-        value = TextCellValue.span(sharedString!.textSpan);
+        value = TextCellValue.span(sharedString?.textSpan ?? const TextSpan());
         break;
       // boolean
       case 'b':
